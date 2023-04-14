@@ -1,0 +1,42 @@
+import java.util.*;
+public class first{
+    public static void guessingNumberGame(){
+        Scanner sc = new Scanner(System.in);
+        int number =  1+(int)(100 * Math.random());
+        int K =5;
+
+        int i,guess ;
+
+        System.out.println("A Number is Choosen" +"Between 1 to 100 " + "Guess The Number"+"Within 5 Trails.");
+
+        for(i=0;i<K;i++){
+            System.out.println("Guess the Number : " );
+        guess =sc.nextInt();
+
+        if(number == guess){
+            System.out.println("Congratulations! "+"You Guessed the number.");
+            break;
+        }
+
+        else if(number < guess && i != K-1){
+            System.out.println("The Number is "+"less than "+guess);
+
+        }
+
+        else if(number > guess && i != K-1){
+            System.out.println("The number is "+"greater than"+guess);
+        }
+
+        }
+
+    if(i == K){
+        System.out.println("You have Exhausted"+"K trails.");
+        System.out.println("The number was "+ number);
+    }
+
+    }
+    
+    public static void main(String args[]){
+        guessingNumberGame();
+    }
+}
